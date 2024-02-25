@@ -1,7 +1,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Text, Flex } from "@chakra-ui/react";
 import { Tile } from "./Tile";
 
 export const possibleTileContents = [
@@ -19,9 +19,45 @@ export const possibleTileContents = [
 
 export function StartScreen({ start }) {
   return (
-    <Box>
-      <Button onClick={start}>Play</Button>
-    </Box>
+    <>
+       <Flex justifyContent="center" alignItems="center" padding="20px">
+         <Flex
+bgColor="#e6fffa"
+height="350px"
+width="360px"
+alignItems="center"
+flexDir="column"
+borderRadius="20px"
+paddingTop="5em"
+gap="1.5rem"
+>
+          <Text color="#31979598" fontSize="30px" fontWeight="700">
+            Memory
+          </Text>
+          <Text color="#369a98" textAlign="center">
+            Flip over tiles looking for pairs
+          </Text>
+          <Box>
+            <Button
+              _hover={{
+                backgroundColor: "normal",
+              }}
+              _active={{
+                backgroundColor: "normal",
+              }}
+              onClick={start}
+              bgColor="#399795"
+              width="100px"
+              borderRadius="30px"
+              color="#ffffff"
+              bg="linear-gradient(to bottom, #399795, #265f5b)"
+            >
+              Play
+            </Button>
+          </Box>
+        </Flex>
+      </Flex>
+    </>
   );
 }
 
