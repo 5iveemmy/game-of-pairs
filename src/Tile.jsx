@@ -31,7 +31,7 @@ export function Tile({ content: Content, flip, state }) {
               width: "100%",
               height: "100%",
               verticalAlign: "top",
-              color: "#fffff",
+              color: "#ffffff",
             }}
           />
         </Box>
@@ -49,8 +49,8 @@ export function Tile({ content: Content, flip, state }) {
               display: "inline-block",
               verticalAlign: "top",
               color: "#c6f6d6",
-              width: '"55px"',
-              height: '"55px"',
+              width: "55px",
+              height: "55px",
             }}
           />
         </Flex>
