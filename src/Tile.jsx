@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 export function Tile({ content: Content, flip, state }) {
   switch (state) {
@@ -7,22 +7,23 @@ export function Tile({ content: Content, flip, state }) {
         <Box
           onClick={flip}
           display="inline-block"
-          width={8}
-          height={8}
           textAlign="center"
-          bg="gray.500"
-        >
-          ?
-        </Box>
+          bg="#68d491"
+          width="70px"
+          height="70px"
+          borderRadius="8px"
+        ></Box>
       );
     case "flipped":
       return (
         <Box
           display="inline-block"
-          width={8}
-          height={8}
           textAlign="center"
-          bg="yellow.500"
+          bgColor="#37a169"
+          width="70px"
+          height="70px"
+          borderRadius="8px"
+          padding="8px"
         >
           <Content
             style={{
@@ -30,28 +31,29 @@ export function Tile({ content: Content, flip, state }) {
               width: "100%",
               height: "100%",
               verticalAlign: "top",
+              color: "#fffff",
             }}
           />
         </Box>
       );
     case "matched":
       return (
-        <Box
-          display="inline-block"
-          width={8}
-          height={8}
-          textAlign="center"
-          color="gray.300"
+        <Flex
+          width="70px"
+          height="70px"
+          justifyContent="center"
+          alignItems="center"
         >
           <Content
             style={{
               display: "inline-block",
-              width: "100%",
-              height: "100%",
               verticalAlign: "top",
+              color: "#c6f6d6",
+              width: '"55px"',
+              height: '"55px"',
             }}
           />
-        </Box>
+        </Flex>
       );
     default:
       throw new Error("Invalid state " + state);

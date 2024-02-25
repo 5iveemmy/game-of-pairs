@@ -142,14 +142,18 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-       <HStack
-justifyContent="center"
-py="20px"
-gap="2"
->
-         <Text textAlign="center" color="#2f855b">Tries</Text>
-         <HStack p="0px 5px" bgColor="#9ae6b4" alignItems="center" borderRadius="5px" justifyContent="center">
-           <Text color="#368b61">{tryCount}</Text>
+      <HStack justifyContent="center" py="20px" gap="2">
+        <Text textAlign="center" color="#2f855b">
+          Tries
+        </Text>
+        <HStack
+          p="0px 5px"
+          bgColor="#9ae6b4"
+          alignItems="center"
+          borderRadius="5px"
+          justifyContent="center"
+        >
+          <Text color="#368b61">{tryCount}</Text>
         </HStack>
       </HStack>
       <Flex justifyContent="center" alignItems="center">
@@ -169,7 +173,7 @@ gap="2"
             maxWidth="320px"
             width="100%"
           >
-            {getTiles(6).map((tile, i) => (
+            {getTiles(16).map((tile, i) => (
               <Tile key={i} flip={() => flip(i)} {...tile} />
             ))}
           </Flex>
